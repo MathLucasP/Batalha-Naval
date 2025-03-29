@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome dos Jogadores</title>
+    <link rel="stylesheet" href="css/nome-jogadores.css"> <!-- Crie um arquivo CSS específico para estilizar a página -->
+</head>
+<body>
+    <div class="container">
+            <form id="playerForm" class="botoes">
+            <label for="player1">Nome do Jogador 1:</label>
+            <input type="text" class="form-control" required title="Insira o nome do jogador!!!" id="player1" name="player1" required>
+            
+            <label for="player2">Nome do Jogador 2:</label>
+            <input type="text" class="form-control" required title="Insira o nome do jogador!!!" id="player2" name="player2" required>
+            
+            <button type="submit">Menu</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('playerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o comportamento padrão do formulário
+
+            // Armazena os nomes dos jogadores no localStorage
+            const player1Name = document.getElementById('player1').value;
+            const player2Name = document.getElementById('player2').value;
+            
+            localStorage.setItem('player1Name', player1Name);
+            localStorage.setItem('player2Name', player2Name);
+
+            // Redireciona para a página de menu
+            window.location.href = 'menu-pvp.html';
+        });
+    </script>
+</body>
+</html>
